@@ -27,9 +27,9 @@ import "greptime/v1/prom.proto";
 import "greptime/v1/common.proto";
 
 service GreptimeDatabase {
-  rpc Handle(GreptimeRequest) returns (GreptimeResponse);
+  rpc Handle(GreptimeRequest) returns(stream GreptimeResponse);
 
-  rpc HandleRequests(stream GreptimeRequest) returns (GreptimeResponse);
+  rpc HandleRequests(stream GreptimeRequest) returns(GreptimeResponse);
 }
 
 message GreptimeRequest {
